@@ -16,7 +16,7 @@ class CreateEscuelasTable extends Migration
         Schema::create('escuelas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable()->default(null);
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             

@@ -17,7 +17,7 @@ class CreateDocentesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('appat');
-            $table->string('apmat');
+            $table->string('apmat')->nullable()->default(null);
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             
