@@ -17,3 +17,56 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+@media (max-width: 575.98px) {
+  .border-xs-left-none {
+    border-left: none !important; }
+  .border-xs-right-none {
+    border-right: none !important; } }
+
+.card-widget {
+    border: 0;
+    position: relative;
+}
+
+.widget-user .widget-user-header {
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  height: 135px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.widget-user .widget-user-image {
+  left: 50%;
+  margin-left: -45px;
+  position: absolute;
+  top: 80px;
+}
+
+.widget-user .widget-user-image>img {
+  border: 3px solid #fff;
+  height: auto;
+  width: 90px;
+}
+
+.widget-user .card-footer {
+  padding-top: 50px;
+}
+
+.description-block {
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.description-block>.description-header {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.description-block>.description-text {
+  text-transform: uppercase;
+}
