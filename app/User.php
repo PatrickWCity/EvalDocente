@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     use HasRoles;
@@ -38,4 +38,52 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the institutos for the user.
+     */
+    public function institutos()
+    {
+        return $this->hasMany('App\Instituto');
+    }
+
+    /**
+     * Get the sedes for the user.
+     */
+    public function sedes()
+    {
+        return $this->hasMany('App\Sede');
+    }
+
+    /**
+     * Get the escuelas for the user.
+     */
+    public function escuelas()
+    {
+        return $this->hasMany('App\Escuela');
+    }
+
+    /**
+     * Get the carreras for the user.
+     */
+    public function carreras()
+    {
+        return $this->hasMany('App\Carrera');
+    }
+
+    /**
+     * Get the modulos for the user.
+     */
+    public function modulos()
+    {
+        return $this->hasMany('App\Modulo');
+    }
+
+    /**
+     * Get the docentes for the user.
+     */
+    public function docentes()
+    {
+        return $this->hasMany('App\Docente');
+    }
 }
