@@ -57,6 +57,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
+            'locale' => '',
             'roles' => 'required'
         ]);
 
@@ -110,6 +111,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
+            'locale' => '',
             'roles' => 'required'
         ]);
 
@@ -148,6 +150,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|max:191|unique:users,email,'.auth()->user()->id,
+            'locale' => '',
             'password' => 'nullable|same:confirm-password|min:6'
         ]);
 

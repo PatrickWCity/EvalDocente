@@ -87,6 +87,14 @@
                             <dd class="col-sm-9">{{ $user->name }}</dd>
                             <dt class="col-sm-3">{{ __('E-Mail Address') }}:</dt>
                             <dd class="col-sm-9">{{ $user->email }}</dd>
+                            <dt class="col-sm-3">{{ __('Language preference') }}:</dt>
+                            <dd class="col-sm-9">
+                                @if ($user->locale === 'es')
+                                    {{ __('Spanish') }}
+                                @else
+                                    {{ __('English') }}
+                                @endif
+                            </dd>
                             <dt class="col-sm-3">{{ __('Role') }}s:</dt>
                             <dd class="col-sm-9">
                                 @foreach($user->getRoleNames() as $v)

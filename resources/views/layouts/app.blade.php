@@ -17,7 +17,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'EvalDocente') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset(mix('js/manifest.js')) }}" defer></script>

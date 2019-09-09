@@ -47,6 +47,10 @@
                             {!! Form::password('confirm-password', array('placeholder' => __('Confirm Password'),'class' => 'form-control')) !!}
                         </div>
                         <div class="form-group">
+                            <label for="text-input">{{ __('Language') }}</label>
+                            {!! Form::select('locale', array('en' => __('English'), 'es' => __('Spanish')), 'es', ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="form-group">
                             <label>{{ __('Role') }}s</label>
                             @foreach($roles as $value)
                                 <div class="form-check">

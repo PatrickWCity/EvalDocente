@@ -4,12 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name', 'EvalDocente') }}</title>
+
+        <!-- Scripts -->
+        <script src="{{ asset(mix('js/manifest.js')) }}" defer></script>
+        <script src="{{ asset(mix('js/vendor.js')) }}" defer></script>
+        <script src="{{ asset(mix('js/app.js')) }}" defer></script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -68,20 +74,22 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">{{ __('Home') }}</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
+                        <a href="{{ route('CheckLang', ['lang' => 'es']) }}">ES</a>
+                        <a href="{{ route('CheckLang', ['lang' => 'en']) }}">EN</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ config('app.name', 'EvalDocente') }}
                 </div>
 
                 <div class="links">
@@ -97,4 +105,17 @@
             </div>
         </div>
     </body>
+    <script>
+	    var botmanWidget = {
+            title: "EvalDocente",
+	        introMessage: '{{ __("✋ Hi! I'm from EvalDocente") }}',
+            placeholderText: '{{ __('Send a message...') }}',
+            bubbleAvatarUrl: "{{ url('/apple-touch-icon.png') }}",
+            aboutText: null,
+            bubbleBackground: "#f2cb7d",
+            mainColor: "#262a2e"
+	    };
+    </script>
+
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </html>

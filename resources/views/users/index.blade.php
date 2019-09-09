@@ -34,6 +34,7 @@
                                     <th>{{ __('ID') }}</th>
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('E-Mail Address') }}</th>
+                                    <th class="text-center">{{ __('Language preference') }}</th>
                                     <th>{{ __('Status') }}<th>
                                     <th>{{ __('Role') }}</th>
                                     
@@ -46,6 +47,13 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td class="text-center">
+                                        @if ($user->locale === 'es')
+                                            {{ __('Spanish') }}
+                                        @else
+                                            {{ __('English') }}
+                                        @endif
+                                    </td>
                                     <td>
                                         @isset($user->email_verified_at)
                                             <div class="badge badge-success">{{ __('Verified') }}</div>
