@@ -7,7 +7,7 @@
         <a href="{{ url('/home') }}">{{ __('Home') }}</a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{{ url('/roles') }}">{{ __('Role') }}s</a>
+        <a href="{{ url('/docentes') }}">{{ __('Teacher') }}s</a>
     </li>
     <li class="breadcrumb-item active">{{ __('Edit') }}</li>
 </ol>
@@ -27,25 +27,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>{{ __('Edit') }} {{ __('Role') }}</strong></div>
-                    {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
+                        <strong>{{ __('Edit') }} {{ __('Teacher') }}</strong></div>
+                    {!! Form::model($docente, ['method' => 'PATCH','route' => ['docentes.update', $docente->id]]) !!}
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="text-input">{{ __('Name') }}</label>
-                            {!! Form::text('name', null, array('placeholder' => __('Name'),'class' => 'form-control')) !!}
+                            <label for="text-input">{{ __('First Name') }}</label>
+                            {!! Form::text('nombre', null, array('placeholder' => __('First Name'),'class' => 'form-control')) !!}
                         </div>
                         <div class="form-group">
-                            <label for="text-input">{{ __('Description') }}</label>
-                            {!! Form::text('descripcion', null, array('placeholder' => __('Description'),'class' => 'form-control')) !!}
+                            <label for="text-input">{{ __('First Last Name') }}</label>
+                            {!! Form::text('appat', null, array('placeholder' => __('First Last Name'),'class' => 'form-control')) !!}
                         </div>
                         <div class="form-group">
-                            <label>{{ __('Permission') }}s</label>
-                            @foreach($permission as $value)
-                                <div class="form-check">
-                                    {{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'form-check-input')) }}
-                                    <label class="form-check-label">{{ $value->name }}</label>
-                                </div>
-                            @endforeach
+                            <label for="text-input">{{ __('Second Last Name') }}</label>
+                            {!! Form::text('apmat', null, array('placeholder' => __('Second Last Name'),'class' => 'form-control'))
+                            !!}
                         </div>
                     </div>
                     <div class="card-footer">
@@ -55,7 +51,7 @@
                         <button class="btn btn-sm btn-danger" type="reset">
                             <i class="fa fa-ban"></i> {{ __('Reset') }}
                         </button>
-                        <a class="btn btn-sm btn-success" href="{{ route('roles.index') }}" role="button">
+                        <a class="btn btn-sm btn-success" href="{{ route('docentes.index') }}" role="button">
                             <i class="fas fa-undo"></i> {{ __('Back') }}
                         </a>
                     </div>

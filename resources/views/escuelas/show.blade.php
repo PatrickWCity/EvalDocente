@@ -7,7 +7,7 @@
         <a href="{{ url('/home') }}">{{ __('Home') }}</a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{{ url('/roles') }}">{{ __('Role') }}s</a>
+        <a href="{{ url('/escuelas') }}">{{ __('School') }}s</a>
     </li>
     <li class="breadcrumb-item active">{{ __('Details') }}</li>
 </ol>
@@ -27,36 +27,38 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>{{ __('Details of') }} {{ __('Role') }}</strong></div>
+                        <strong>{{ __('Details of') }} {{ __('School') }}</strong></div>
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-sm-3">{{ __('ID') }}:</dt>
-                            <dd class="col-sm-9">{{ $role->id }}</dd>
+                            <dd class="col-sm-9">{{ $escuela->id }}</dd>
                             <dt class="col-sm-3">{{ __('Name') }}:</dt>
-                            <dd class="col-sm-9">{{ $role->name }}</dd>
-                            <dt class="col-sm-3">{{ __('Permission') }}s:</dt>
+                            <dd class="col-sm-9">{{ $escuela->nombre }}</dd>
+                            <dt class="col-sm-3">{{ __('Description') }}:</dt>
+                            <dd class="col-sm-9">{{ $escuela->descripcion }}</dd>
+                            <dt class="col-sm-3">{{ __('Career') }}s:</dt>
                             <dd class="col-sm-9">
-                                @foreach($rolePermissions as $v)
-                                    <div class="badge badge-success">{{ $v->name }}</div>
+                                @foreach($escuelaCarrera as $v)
+                                    <div class="badge badge-success">{{ $v->nombre }}</div>
                                 @endforeach
                             </dd>
                         </dl>
                     </div>
                     <div class="card-footer">
-                        <form action="{{ route('roles.destroy',$role->id) }}" method="POST">
-                            @can('role-edit')
-                            <a class="btn btn-sm btn-primary" href="{{ route('roles.edit',$role->id) }}">
+                        <form action="{{ route('escuelas.destroy',$escuela->id) }}" method="POST">
+                            @can('escuela-edit')
+                            <a class="btn btn-sm btn-primary" href="{{ route('escuelas.edit',$escuela->id) }}">
                                 <i class="fas fa-edit"></i> {{ __('Edit') }}
                             </a>
                             @endcan
                             @csrf
                             @method('DELETE')
-                            @can('role-delete')
+                            @can('escuela-delete')
                             <button type="submit" class="btn btn-sm btn-danger">
                                 <i class="far fa-trash-alt"></i> {{ __('Delete') }}
                             </button>
                             @endcan
-                            <a class="btn btn-sm btn-success" href="{{ route('roles.index') }}" role="button">
+                            <a class="btn btn-sm btn-success" href="{{ route('escuelas.index') }}" role="button">
                                 <i class="fas fa-undo"></i> {{ __('Back') }}
                             </a>
                         </form>

@@ -7,7 +7,7 @@
         <a href="{{ url('/home') }}">{{ __('Home') }}</a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{{ url('/roles') }}">{{ __('Role') }}s</a>
+        <a href="{{ url('/docentes') }}">{{ __('Teacher') }}s</a>
     </li>
     <li class="breadcrumb-item active">{{ __('Details') }}</li>
 </ol>
@@ -27,36 +27,34 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>{{ __('Details of') }} {{ __('Role') }}</strong></div>
+                        <strong>{{ __('Details of') }} {{ __('Teacher') }}</strong></div>
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-sm-3">{{ __('ID') }}:</dt>
-                            <dd class="col-sm-9">{{ $role->id }}</dd>
-                            <dt class="col-sm-3">{{ __('Name') }}:</dt>
-                            <dd class="col-sm-9">{{ $role->name }}</dd>
-                            <dt class="col-sm-3">{{ __('Permission') }}s:</dt>
-                            <dd class="col-sm-9">
-                                @foreach($rolePermissions as $v)
-                                    <div class="badge badge-success">{{ $v->name }}</div>
-                                @endforeach
-                            </dd>
+                            <dd class="col-sm-9">{{ $docente->id }}</dd>
+                            <dt class="col-sm-3">{{ __('First Name') }}:</dt>
+                            <dd class="col-sm-9">{{ $docente->nombre }}</dd>
+                            <dt class="col-sm-3">{{ __('First Last Name') }}:</dt>
+                            <dd class="col-sm-9">{{ $docente->appat }}</dd>
+                            <dt class="col-sm-3">{{ __('Second Last Name') }}:</dt>
+                            <dd class="col-sm-9">{{ $docente->apmat }}</dd>
                         </dl>
                     </div>
                     <div class="card-footer">
-                        <form action="{{ route('roles.destroy',$role->id) }}" method="POST">
-                            @can('role-edit')
-                            <a class="btn btn-sm btn-primary" href="{{ route('roles.edit',$role->id) }}">
+                        <form action="{{ route('docentes.destroy',$docente->id) }}" method="POST">
+                            @can('docente-edit')
+                            <a class="btn btn-sm btn-primary" href="{{ route('docentes.edit',$docente->id) }}">
                                 <i class="fas fa-edit"></i> {{ __('Edit') }}
                             </a>
                             @endcan
                             @csrf
                             @method('DELETE')
-                            @can('role-delete')
+                            @can('docente-delete')
                             <button type="submit" class="btn btn-sm btn-danger">
                                 <i class="far fa-trash-alt"></i> {{ __('Delete') }}
                             </button>
                             @endcan
-                            <a class="btn btn-sm btn-success" href="{{ route('roles.index') }}" role="button">
+                            <a class="btn btn-sm btn-success" href="{{ route('docentes.index') }}" role="button">
                                 <i class="fas fa-undo"></i> {{ __('Back') }}
                             </a>
                         </form>
