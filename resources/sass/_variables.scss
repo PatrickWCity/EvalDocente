@@ -70,3 +70,97 @@ $cyan: #6cb2eb;
 .description-block>.description-text {
   text-transform: uppercase;
 }
+
+#botmanWidgetRoot div div div {
+  color: #fff !important;
+}
+
+.btn-github:not(:disabled):not(.disabled).active:focus, 
+.btn-github:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-github.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(36,40,45,.5);
+}
+
+.btn-github:not(:disabled):not(.disabled).active, 
+.btn-github:not(:disabled):not(.disabled):active, 
+.show>.btn-github.dropdown-toggle {
+  color: #fff;
+  background-color: #24282d;
+  border-color: #24282d;
+}
+
+.btn-github.focus, .btn-github:focus {
+  box-shadow: 0 0 0 0.2rem rgba(36,40,45,.5);
+}
+
+.btn-github:hover {
+  color: #fff;
+  background-color: #0e0f11;
+  border-color: #0e0f11;
+}
+
+.btn-github {
+  color: #fff;
+  background-color: #24282d;
+  border-color: #24282d;
+}
+
+.btn-gitlab:not(:disabled):not(.disabled).active:focus, 
+.btn-gitlab:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-gitlab.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(225,64,39,.5);
+}
+
+.btn-gitlab:not(:disabled):not(.disabled).active, 
+.btn-gitlab:not(:disabled):not(.disabled):active, 
+.show>.btn-gitlab.dropdown-toggle {
+  color: #fff;
+  background-color: #e14027;
+  border-color: #e14027;
+}
+
+.btn-gitlab.focus, .btn-gitlab:focus {
+  box-shadow: 0 0 0 0.2rem rgba(225,64,39,.5);
+}
+
+.btn-gitlab:hover {
+  color: #fff;
+  background-color: #bc2f1a;
+  border-color: #bc2f1a;
+}
+
+.btn-gitlab {
+  color: #fff;
+  background-color: #e14027;
+  border-color: #e14027;
+}
+
+.btn-bitbucket:not(:disabled):not(.disabled).active:focus, 
+.btn-bitbucket:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-bitbucket.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(28,76,180,.5);
+}
+
+.btn-bitbucket:not(:disabled):not(.disabled).active, 
+.btn-bitbucket:not(:disabled):not(.disabled):active, 
+.show>.btn-bitbucket.dropdown-toggle {
+  color: #fff;
+  background-color: #1c4cb4;
+  border-color: #1c4cb4;
+}
+
+.btn-bitbucket.focus, .btn-bitbucket:focus {
+  box-shadow: 0 0 0 0.2rem rgba(28,76,180,.5);
+}
+
+.btn-bitbucket:hover {
+  color: #fff;
+  background-color: #153a89;
+  border-color: #153a89;
+}
+
+.btn-bitbucket {
+  color: #fff;
+  background-color: #1c4cb4;
+  border-color: #1c4cb4;
+}

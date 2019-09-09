@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@coreui/coreui": "^2.1.12",
+        "botman-tinker": "0.0.1",
         "perfect-scrollbar": "^1.4.0",
         "simple-line-icons": "^2.4.1"
     }
