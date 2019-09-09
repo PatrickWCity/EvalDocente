@@ -13,15 +13,25 @@ use Hash;
 class UserController extends Controller
 {
     /**
+     * Instantiate a new UserController instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:user-create', ['only' => ['create','store']]);
+        $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
-        return view('users.index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        $data = User::latest('id')->paginate(10);
+        return view('users.index',compact('data'));
     }
 
     /**
@@ -57,7 +67,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
 
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+                        ->with('success', trans('User').' '.trans('created successfully'));
     }
 
     /**
@@ -117,7 +127,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
 
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success', trans('User').' '.trans('updated successfully'));
     }
 
     /**
@@ -130,6 +140,39 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('success', trans('User').' '.trans('deleted successfully'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|max:191|unique:users,email,'.auth()->user()->id,
+            'password' => 'nullable|same:confirm-password|min:6'
+        ]);
+
+        $input = $request->all();
+        if(!empty($input['password'])){ 
+            $input['password'] = Hash::make($input['password']);
+        }else{
+            $input = Arr::except($input, ['password']);
+        }
+
+        $user = auth()->user();
+        $user->update($input);
+
+        return redirect()->route('users.profile')
+                        ->with('success', trans('Account').' '.trans('updated successfully '));
+    }
+    public function profile()
+    {
+        $user = auth()->user();
+        return view('users.profile',compact('user'));
+    }
+
+    public function settings()
+    {
+        $user = auth()->user();
+        return view('users.settings',compact('user'));
     }
 }
