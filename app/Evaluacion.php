@@ -11,7 +11,7 @@ class Evaluacion extends Model
      *
      * @var string
      */
-    protected $table = 'Evaluaciones';
+    protected $table = 'evaluaciones';
 
     /**
      * The attributes that are mass assignable.
