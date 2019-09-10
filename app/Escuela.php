@@ -26,7 +26,7 @@ class Escuela extends Model
      */
     public function sedes()
     {
-        return $this->belongsToMany('App\Sede', 'Sede_Escuela');
+        return $this->belongsToMany('App\Sede', 'sede_escuela');
     }
 
     /**
@@ -34,6 +34,6 @@ class Escuela extends Model
      */
     public function carreras()
     {
-        return $this->belongsToMany('App\Carrera', 'Escuela_Carrera');
+        return $this->belongsToMany('App\Carrera', 'escuela_carrera');
     }
 }

@@ -34,6 +34,6 @@ class Modulo extends Model
      */
     public function docentes()
     {
-        return $this->belongsToMany('App\Docente', 'Modulo_Docente');
+        return $this->belongsToMany('App\Docente', 'modulo_docente');
     }
 }

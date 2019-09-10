@@ -34,6 +34,6 @@ class Sede extends Model
      */
     public function escuelas()
     {
-        return $this->belongsToMany('App\Escuela', 'Sede_Escuela');
+        return $this->belongsToMany('App\Escuela', 'sede_escuela');
     }
 }

@@ -26,6 +26,6 @@ class Docente extends Model
      */
     public function modulos()
     {
-        return $this->belongsToMany('App\Modulo', 'Modulo_Docente');
+        return $this->belongsToMany('App\Modulo', 'modulo_docente');
     }
 }
