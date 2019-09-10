@@ -114,6 +114,8 @@
     "What is your E-mail Address?": "¿Cuál es tu dirección de correo electrónico?",
     "That doesn't look like a valid email. Please enter a valid email.": "Eso no parece un correo electrónico válido. Por favor introduzca una dirección de correo electrónico válida.",
     "I'm sowwy, ": "Wo siento, ",
-    ", This featuwe is stiww undew devewopment! UwU": " ¡Esta cawactewística aún está en desawwowwo! UwU"
-
+    ", This featuwe is stiww undew devewopment! UwU": " ¡Esta cawactewística aún está en desawwowwo! UwU",
+    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser: [:actionURL](:actionURL)" : "Si tiene problemas para hacer clic en el botón \":actionText\", copie y pegue la siguiente URL en su navegador web: [:actionURL](:actionURL) \n",
+    "This password reset link will expire in :count minutes.": "Este enlace de restablecimiento de contraseña caducará en :count minutos.",
+    "Whoops!": "¡Vaya!"
   }
