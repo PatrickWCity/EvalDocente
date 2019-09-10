@@ -12,7 +12,7 @@ class EscuelasTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Escuelas')->insert([
+        DB::table('escuelas')->insert([
             [
                 'nombre' => 'Construcción e Ingeniería',
                 'descripcion' => 'Formar personas dispuestas a servir, cuya función esencial es la gestión tecnológica y administrativa, respondiendo a las necesidades de un mundo globalizado.',

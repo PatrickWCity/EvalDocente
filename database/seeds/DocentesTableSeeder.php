@@ -12,7 +12,7 @@ class DocentesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Docentes')->insert([
+        DB::table('docentes')->insert([
             [
                 'nombre' => 'Vignia Carolina',
                 'appat' => 'Trejos',

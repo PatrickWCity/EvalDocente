@@ -12,7 +12,7 @@ class CarreraModuloTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Carrera_Modulo')->insert([
+        DB::table('carrera_modulo')->insert([
             [
                 'carrera_id' => '1',
                 'modulo_id' => '1',

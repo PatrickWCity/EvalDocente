@@ -12,7 +12,7 @@ class CarrerasTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Carreras')->insert([
+        DB::table('carreras')->insert([
             [
                 'nombre' => 'Técnico en Programación Computacional',
                 'descripcion' => 'El Técnico en Programación Computacional es un técnico de nivel superior capacitado para realizar el ciclo de desarrollo de software de acuerdo a especificaciones, contemplando la construcción, prueba e implementación de soluciones según los requerimientos de clientes y estándares de calidad de la industria.',

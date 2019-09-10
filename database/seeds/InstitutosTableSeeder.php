@@ -12,7 +12,7 @@ class InstitutosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Institutos')->insert([
+        DB::table('institutos')->insert([
             [
                 'nombre' => 'AIEP',
                 'descripcion' => '24 sedes, 10 escuelas y más de 70 carreras. Continuidad de estudios en la Universidad Andrés Bello. Programa Ejecutivo Vespertino PEV.',

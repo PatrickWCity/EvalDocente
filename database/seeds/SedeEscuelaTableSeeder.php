@@ -12,7 +12,7 @@ class SedeEscuelaTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Sede_Escuela')->insert([
+        DB::table('sede_escuela')->insert([
             [
                 'sede_id' => '1',
                 'escuela_id' => '1',

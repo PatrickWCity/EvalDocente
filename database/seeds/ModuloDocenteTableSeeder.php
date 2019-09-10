@@ -12,7 +12,7 @@ class ModuloDocenteTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Modulo_Docente')->insert([
+        DB::table('modulo_docente')->insert([
             [
                 'modulo_id' => '1',
                 'docente_id' => '1',

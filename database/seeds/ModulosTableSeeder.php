@@ -12,7 +12,7 @@ class ModulosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Modulos')->insert([
+        DB::table('modulos')->insert([
             [
                 'nombre' => 'Calidad Y Auditoría',
                 'descripcion' => 'Calidad Y Auditoría',

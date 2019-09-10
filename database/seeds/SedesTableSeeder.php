@@ -12,7 +12,7 @@ class SedesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Sedes')->insert([
+        DB::table('sedes')->insert([
             [
                 'nombre' => 'Bellavista',
                 'descripcion' => 'Sede AIEP Bellavista desde 2009 entregando educación técnico profesional de calidad a sus estudiantes. Conoce las escuelas y carreras que tenemos para ti.',
