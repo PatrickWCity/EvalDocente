@@ -41,3 +41,6 @@ Route::get('lang/{lang}', function($lang) {
     \Session::put('lang', $lang);
     return \Redirect::back();
 })->middleware('web')->name('CheckLang');
+
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallback');

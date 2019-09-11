@@ -70,27 +70,27 @@
         <div class="card-footer p-4">
             <div class="row">
                 <div class="btn-group col-12" role="group">
-                    <button class="btn btn-facebook" type="button">
+                    <a href="{{ url('/login/facebook') }}" class="btn btn-facebook">
                         <i class="fab fa-facebook-f"></i>
-                    </button>
-                    <button class="btn btn-twitter" type="button">
+                    </a>
+                    <a href="{{ url('/login/twitter') }}" class="btn btn-twitter">
                         <i class="fab fa-twitter"></i>
-                    </button>
-                    <button class="btn btn-linkedin" type="button">
+                    </a>
+                    <a href="{{ url('/login/linkedin') }}" class="btn btn-linkedin">
                         <i class="fab fa-linkedin"></i>
-                    </button>
-                    <button class="btn btn-behance" type="button">
+                    </a>
+                    <a href="{{ url('/login/google') }}" class="btn btn-behance">
                         <i class="fab fa-google"></i>
-                    </button>
-                    <button class="btn btn-github" type="button">
+                    </a>
+                    <a href="{{ url('/login/github') }}" class="btn btn-github">
                         <i class="fab fa-github"></i>
-                    </button>
-                    <button class="btn btn-gitlab" type="button">
+                    </a>
+                    <a href="{{ url('/login/gitlab') }}" class="btn btn-gitlab">
                         <i class="fab fa-gitlab"></i>
-                    </button>
-                    <button class="btn btn-bitbucket" type="button">
+                    </a>
+                    <a href="{{ url('/login/bitbucket') }}" class="btn btn-bitbucket">
                         <i class="fab fa-bitbucket"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
