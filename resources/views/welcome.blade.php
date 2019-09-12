@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        
         <title>{{ config('app.name', 'EvalDocente') }}</title>
 
         <!-- Scripts -->
@@ -93,17 +96,26 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ url('privacy') }}">{{ __('Privacy Policy') }}</a>
+                    <a href="{{ url('terms') }}">{{ __('Terms of Service') }}</a>
+                    <a href="{{ url('cookies-policy') }}">{{ __('Cookies Policy') }}</a>
+                    <a href="{{ url('about') }}">{{ __('About Our Team') }}</a>
+                    <a href="{{ url('contact') }}">{{ __('Contact Us') }}</a>
                 </div>
+                <button class="btn btn-primary" id="changePreferences">{{ __('Change Preferences') }}</button>
             </div>
         </div>
+        <script type="text/javascript" src="//www.termsfeed.com/cookie-consent/releases/3.0.0/cookie-consent.js"></script>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            @if (Lang::locale() === 'es')
+                var lang = "es"
+            @else
+                var lang = "en"
+            @endif
+            cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"dark","change_preferences_selector":"#changePreferences","language":lang,"website_name":"EvalDocente","cookies_policy_url":"https://evaldocente.herokuapp.com/cookies-policy"});
+        });
+        </script>
     </body>
     <script>
 	    var botmanWidget = {

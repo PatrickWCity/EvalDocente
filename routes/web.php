@@ -15,6 +15,26 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('lang');
 
+Route::get('/about', function () {
+    return view('about');
+})->middleware('lang');
+
+Route::get('/terms', function () {
+    return view('terms');
+})->middleware('lang');
+
+Route::get('/privacy', function () {
+    return view('privacy');
+})->middleware('lang');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->middleware('lang');
+
+Route::get('/cookies-policy', function () {
+    return view('cookies');
+})->middleware('lang');
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified','lang');

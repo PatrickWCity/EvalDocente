@@ -164,3 +164,24 @@ $cyan: #6cb2eb;
   background-color: #1c4cb4;
   border-color: #1c4cb4;
 }
+
+.cc_dialog.simple {
+  max-width: 100% !important;
+}
+
+.cc_css_reboot.cc_dialog.dark.simple.px-5.py-5 {
+    padding-left: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1rem !important;
+}
+.cc_cp_f_save {
+  padding: 20px 10px;
+}
+.cc_cp_f_powered_by {
+  color: #212121 !important;
+}
+
+.cc_cp_f_powered_by a {
+  display: none !important;
+}

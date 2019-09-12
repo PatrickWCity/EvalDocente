@@ -40,6 +40,17 @@
         </main>
     </div>
     @include('layouts.footer')
+    <script type="text/javascript" src="//www.termsfeed.com/cookie-consent/releases/3.0.0/cookie-consent.js"></script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        @if (Lang::locale() === 'es')
+                var lang = "es"
+        @else
+                var lang = "en"
+        @endif
+        cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"dark","change_preferences_selector":"#changePreferences","language":lang,"website_name":"EvalDocente","cookies_policy_url":"https://evaldocente.herokuapp.com/cookies-policy"});
+    });
+    </script>
 </body>
     <script>
 	    var botmanWidget = {
