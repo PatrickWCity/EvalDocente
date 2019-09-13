@@ -71,6 +71,10 @@ $cyan: #6cb2eb;
   text-transform: uppercase;
 }
 
+#botmanWidgetRoot div {
+  z-index: 2147483646 !important;
+}
+
 #botmanWidgetRoot div div div {
   color: #fff !important;
 }
