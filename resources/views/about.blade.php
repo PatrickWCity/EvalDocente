@@ -16,7 +16,7 @@
                 <img class="rounded-circle"
                     src="{{ url('/img/users/default.jpg') }}"
                     alt="Generic placeholder image" width="140" height="140">
-                <h3>Fabio Carcamo</h3>
+                <h3>Fabio Cárcamo</h3>
                 <p>{{ __('Database Administrator') }}</p>
                 <p><a class="btn btn-secondary" href="#" role="button">{{ __('View details') }} »</a></p>
             </div>
@@ -32,7 +32,7 @@
                 <img class="rounded-circle"
                     src="{{ url('/img/users/default.jpg') }}"
                     alt="Generic placeholder image" width="140" height="140">
-                <h3>Alvaro Rodriguez</h3>
+                <h3>Álvaro Rodríguez</h3>
                 <p>{{ __('Product Owner') }}</p>
                 <p><a class="btn btn-secondary" href="#" role="button">{{ __('View details') }} »</a></p>
             </div>
