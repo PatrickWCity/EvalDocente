@@ -40,6 +40,13 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /**
+     * Get the identities for the user.
+     */
+    public function identities() {
+        return $this->hasMany('App\SocialIdentity');
+    }
+
+    /**
      * Get the institutos for the user.
      */
     public function institutos()
