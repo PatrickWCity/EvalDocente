@@ -101,15 +101,25 @@
                                 <div class="badge badge-success">{{ $v }}</div>
                                 @endforeach
                             </dd>
+                            <dt class="col-sm-3">{{ __('Social Accounts Linked') }}:</dt>
+                            <dd class="col-sm-9">
+                                @foreach($user->identities as $v)
+                                    @if($v->provider_name === 'facebook')
+                                        <div class="btn btn-{{ $v->provider_name }} active"><i class="fab fa-{{ $v->provider_name }}-f"></i> {{ $v->provider_name }}</div>
+                                    @elseif($v->provider_name === 'google')
+                                        <div class="btn btn-behance active"><i class="fab fa-{{ $v->provider_name }}"></i> {{ $v->provider_name }}</div>
+                                    @else
+                                        <div class="btn btn-{{ $v->provider_name }} active"><i class="fab fa-{{ $v->provider_name }}"></i> {{ $v->provider_name }}</div>
+                                    @endif
+                                @endforeach
+                            </dd>
                         </dl>
                     </div>
                     <div class="card-footer">
                         <form action="{{ route('users.destroy',$user->id) }}" method="POST">
-                            @can('user-edit')
                             <a class="btn btn-sm btn-primary" href="{{ route('users.settings') }}">
                                 <i class="fas fa-edit"></i> {{ __('Edit') }}
                             </a>
-                            @endcan
                         </form>
                     </div>
                 </div>
