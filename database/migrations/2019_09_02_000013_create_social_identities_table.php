@@ -14,11 +14,12 @@ class CreateSocialIdentitiesTable extends Migration
     public function up()
     {
         Schema::create('social_identities', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('user_id');           
-            $table->string('provider_name')->nullable();
-            $table->string('provider_id')->unique()->nullable();          
-            $table->timestamps();
+            $table->bigIncrements('id')->comment('Identificador de Identidad Social');
+            $table->bigInteger('user_id')->comment('Identificador de Usuario');           
+            $table->string('provider_name')->nullable()->comment('Nombre de Proveedor');
+            $table->string('provider_id')->unique()->nullable()->comment('Identificador de Proveedor');          
+            $table->timestamp('created_at')->nullable()->comment('Fecha de Creación');
+            $table->timestamp('updated_at')->nullable()->comment('Fecha de Actualización');
         });
     }
 

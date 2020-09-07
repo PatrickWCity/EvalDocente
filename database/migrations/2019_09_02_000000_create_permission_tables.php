@@ -17,17 +17,19 @@ class CreatePermissionTables extends Migration
         $columnNames = config('permission.column_names');
 
         Schema::create($tableNames['permissions'], function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('guard_name');
-            $table->timestamps();
+            $table->increments('id')->comment('Identificador de Permiso');
+            $table->string('name')->comment('Nombre de Permiso');
+            $table->string('guard_name')->comment('Nombre de Guardia de Permiso');
+            $table->timestamp('created_at')->nullable()->comment('Fecha de Creación');
+            $table->timestamp('updated_at')->nullable()->comment('Fecha de Actualización');
         });
 
         Schema::create($tableNames['roles'], function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('guard_name');
-            $table->timestamps();
+            $table->increments('id')->comment('Identificador de Permiso');
+            $table->string('name')->comment('Nombre de Permiso');
+            $table->string('guard_name')->comment('Nombre de Guardia de Permiso');
+            $table->timestamp('created_at')->nullable()->comment('Fecha de Creación');
+            $table->timestamp('updated_at')->nullable()->comment('Fecha de Actualización');
         });
 
         Schema::create($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames, $columnNames) {

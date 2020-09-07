@@ -14,10 +14,11 @@ class CreateEvaluacionesTable extends Migration
     public function up()
     {
         Schema::create('evaluaciones', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('docente_id');
+            $table->bigIncrements('id')->comment('Identificador de Evaluacion');
+            $table->timestamp('created_at')->nullable()->comment('Fecha de Creación');
+            $table->timestamp('updated_at')->nullable()->comment('Fecha de Actualización');
+            $table->unsignedBigInteger('user_id')->comment('Identificador de Usuario');
+            $table->unsignedBigInteger('docente_id')->comment('Identificador de Docente');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('docente_id')->references('id')->on('docentes')->onDelete('cascade');
